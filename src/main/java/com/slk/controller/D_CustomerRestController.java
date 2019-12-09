@@ -34,13 +34,13 @@ public class D_CustomerRestController {
 	private D_CustomerImpl customerImpl;
 //	D_CustomerInterface ci=new D_CustomerImpl();
 
-	@GetMapping("/Customer")
+	@GetMapping("/d_Customer")
 		public List getCustomers() {
 		
 		return customerImpl.viewAllCustomer();
 	}
 
-	@GetMapping("/Customer/{id}")
+	@GetMapping("/d_Customer/{id}")
 	public ResponseEntity getCustomer(@PathVariable("id") int id) {
 		
 		D_Customer customer=customerImpl.viewProfile(id);
@@ -117,7 +117,7 @@ public class D_CustomerRestController {
 		return new ResponseEntity(flag, HttpStatus.OK);
 	}
 	
-	@PutMapping(value = "/put/Customer/{id}")
+	@PutMapping(value = "/put/d_Customer/{id}")
 	public ResponseEntity createCustomer(@PathVariable("id") int id,@RequestBody D_Customer cust ) {
 
 		customerImpl.updateprofile(id, cust);

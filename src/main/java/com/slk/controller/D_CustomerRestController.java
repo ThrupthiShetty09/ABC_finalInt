@@ -52,7 +52,7 @@ public class D_CustomerRestController {
 		return new ResponseEntity(customer, HttpStatus.OK);
 	}
 	//********************  Login   ****************************
-	@GetMapping("/Customer/{username}/{password}")
+	@GetMapping("/d_Customer/{username}/{password}")
 	public ResponseEntity getCustomerLogin(@PathVariable("username") String username,@PathVariable("password") String password) {
 		
 		int flag=customerImpl.loginValidation(username,password);
@@ -65,7 +65,7 @@ public class D_CustomerRestController {
 	}
 	//
 	
-	@GetMapping("/Customer/Balance/{id}")
+	@GetMapping("/d_Customer/Balance/{id}")
 	public ResponseEntity getCustomerBalance(@PathVariable("id") int id) {
 		
 		D_Customer customer=customerImpl.viewBalance(id);;
@@ -78,7 +78,7 @@ public class D_CustomerRestController {
 	}
 	
 	
-	@GetMapping("/Customer/Loan/{id}")
+	@GetMapping("/d_Customer/Loan/{id}")
 	public ResponseEntity getCustomerLoan(@PathVariable("id") int id) {
 		
 		D_Loan loan=customerImpl.viewLoan(id);
@@ -91,7 +91,7 @@ public class D_CustomerRestController {
 	}
 	
 	
-	@GetMapping("/Customer/Transaction/{id}")
+	@GetMapping("/d_Customer/Transaction/{id}")
 	public ResponseEntity getCustomerTransaction(@PathVariable("id") int id) {
 		
 		List<D_Transaction> t=customerImpl.transactionhistory(id);;
@@ -104,7 +104,7 @@ public class D_CustomerRestController {
 	}
 	
 	
-	@GetMapping("/Customer/Transfer/{id}/{amount}/{accNo}")
+	@GetMapping("/d_Customer/Transfer/{id}/{amount}/{accNo}")
 	public ResponseEntity getCustomerTransfer(@PathVariable("id") int id,@PathVariable("amount") double amount,@PathVariable("accNo") int accNo) {
 		//double amount=500.00;
 		//int accNo=123456;

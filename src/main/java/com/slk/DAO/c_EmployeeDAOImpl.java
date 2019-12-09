@@ -83,9 +83,7 @@ import com.slk.util.DButil;
 				t.setTrans_date(rs.getString(2));
 				t.setTrans_credit(rs.getFloat(3));
 				t.setTrans_debit(rs.getFloat(4));
-				
-		         
-		         tt.add(t);
+				tt.add(t);
 		         
 		    }
 		return tt;
